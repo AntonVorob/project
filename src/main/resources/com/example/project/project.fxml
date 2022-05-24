@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.project.HelloController">
+   <center>
+      <TabPane prefHeight="429.0" prefWidth="600.0" side="BOTTOM" style="-fx-background-color: #708090;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Главная">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="5.0" prefHeight="20.0" prefWidth="574.0" style="-fx-background-color: grey;" text="Поиск фильма или сериала">
+                           <opaqueInsets>
+                              <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                           </opaqueInsets></Label>
+                        <HBox fx:id="main" layoutX="300.0" layoutY="30.0" prefHeight="340.0" prefWidth="300.0" />
+                        <ListView fx:id="listviewmain" onMouseClicked="#SelectedMain" layoutX="20.0" layoutY="30.0" prefHeight="340.0" prefWidth="266.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Закладки">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="371.0" prefWidth="594.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="В планах">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="490.0">
+                                       <children>
+                                          <HBox fx:id="hboxvp" layoutX="278.0" prefHeight="342.0" prefWidth="316.0" style="-fx-background-color: Grey;" />
+                                          <ListView fx:id="listviewvp" prefHeight="343.0" prefWidth="272.0">
+                                             <opaqueInsets>
+                                                <Insets top="10.0" />
+                                             </opaqueInsets></ListView>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Просмотрено">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView fx:id="listviewp" onMouseClicked="#SelectedPlane" layoutX="6.0" prefHeight="342.0" prefWidth="263.0" />
+                                          <HBox fx:id="hboxp"  layoutX="269.0" prefHeight="342.0" prefWidth="324.0" style="-fx-background-color: GREY;" />
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab text="Избранное">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView fx:id="listviewu" onMouseClicked="#SelectedU" layoutX="7.0" prefHeight="342.0" prefWidth="267.0" />
+                                          <HBox fx:id="hboxu"  layoutX="274.0" prefHeight="343.0" prefWidth="321.0" style="-fx-background-color: GREY;" />
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Отложено">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView fx:id="listviewO"  onMouseClicked="#SelectedPostponed" layoutX="8.0" prefHeight="343.0" prefWidth="266.0" />
+                                          <HBox fx:id="hboxo"  layoutX="274.0" prefHeight="343.0" prefWidth="320.0" style="-fx-background-color: GREY;" />
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                              <Tab text="Брошено">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView fx:id="listviewB" onMouseClicked="#SelectedAbandoned"  layoutX="14.0" prefHeight="344.0" prefWidth="269.0" />
+                                          <HBox fx:id="hboxb"  layoutX="283.0" prefHeight="343.0" prefWidth="311.0" style="-fx-background-color: GREY;" />
+                                       </children></AnchorPane>
+                                </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Профиль">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="91.0" fitWidth="83.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="http://cdn.iz.ru/sites/default/files/styles/970x546/public/video_item-2017-09/kttttt65878778.JPG.jpg?itok=MfEr11yL" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="112.0" layoutY="14.0" prefHeight="17.0" prefWidth="245.0" style="-fx-background-color: grey;" text="Имя профиля:" />
+                        <Label layoutX="112.0" layoutY="39.0" prefHeight="17.0" prefWidth="246.0" style="-fx-background-color: grey;" text="Описание профиля:" />
+                        <PieChart layoutX="248.0" layoutY="138.0" prefHeight="172.0" prefWidth="245.0" />
+                        <Label layoutX="56.0" layoutY="138.0" prefHeight="17.0" prefWidth="152.0" style="-fx-background-color: grey;" text="Статистика" />
+                        <Label layoutX="56.0" layoutY="155.0" prefHeight="17.0" prefWidth="152.0" style="-fx-background-color: grey;" text="*Смотрю:" />
+                        <Label layoutX="56.0" layoutY="172.0" prefHeight="17.0" prefWidth="151.0" style="-fx-background-color: grey;" text="*В планах:" />
+                        <Label layoutX="56.0" layoutY="189.0" prefHeight="17.0" prefWidth="151.0" style="-fx-background-color: grey;" text="*Просмотрено:" />
+                        <Label layoutX="56.0" layoutY="206.0" prefHeight="17.0" prefWidth="151.0" style="-fx-background-color: grey;" text="*Отложено:" />
+                        <Label layoutX="56.0" layoutY="223.0" prefHeight="17.0" prefWidth="151.0" style="-fx-background-color: grey;" text="*Брошено:" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
