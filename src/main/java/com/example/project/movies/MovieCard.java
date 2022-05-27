@@ -21,6 +21,10 @@ public class MovieCard extends HBox {
         }
     }
 
+    // TODO:
+    public void setMovie(Movie m) {
+
+    }
     public void setMovieName(String s) {
         this.nameTitle.setText(s);
     }

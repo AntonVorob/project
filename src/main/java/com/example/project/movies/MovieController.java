@@ -1,8 +1,6 @@
 package com.example.project.movies;
 
 import com.example.project.ChatBox;
-import com.example.project.ChatDialog;
-import com.example.project.movies.MovieCard;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -25,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class MovieController implements Initializable {
 
-    public final ObservableList<ChatDialog> movies = FXCollections.observableArrayList();
+    public final ObservableList<Movie> movies = FXCollections.observableArrayList();
 
     public ListView listviewvp;
     public  HBox hboxvp;;
@@ -52,7 +50,7 @@ public class MovieController implements Initializable {
         this.listviewvp.setItems(movies);
 
         this.listviewvp.setCellFactory(lv -> {
-            ListCell<ChatDialog> cell = new ListCell<ChatDialog>() {
+            ListCell<Movie> cell = new ListCell<ChatDialog>() {
                 @Override
                 protected void updateItem(ChatDialog item, boolean empty) {
                     super.updateItem(item, empty);

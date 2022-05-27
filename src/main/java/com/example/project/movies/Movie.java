@@ -1,6 +1,17 @@
-package com.example.project;
+package com.example.project.movies;
 
-public class Movies {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Movie {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
+
     String nameRU;
     String nameEN;
     String PosterURL;
@@ -13,7 +24,7 @@ public class Movies {
 
 //
 
-    public Movies(String nameRU, String nameEN, String posterURL, String genres, int years, double ratingKinopoisk, String shortDescription, String country, String webUrl) {
+    public Movie(String nameRU, String nameEN, String posterURL, String genres, int years, double ratingKinopoisk, String shortDescription, String country, String webUrl) {
         this.nameRU = nameRU;
         this.nameEN = nameEN;
         PosterURL = posterURL;
@@ -23,6 +34,10 @@ public class Movies {
         this.shortDescription = shortDescription;
         this.country = country;
         this.webUrl = webUrl;
+    }
+
+    public Movie() {
+
     }
 
     public String getNameRU() {

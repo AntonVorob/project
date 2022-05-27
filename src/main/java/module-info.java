@@ -1,8 +1,16 @@
-module com.example.project {
+open module com.example.project {
     requires javafx.controls;
     requires javafx.fxml;
-
-
-    opens com.example.project to javafx.fxml;
-    exports com.example.project;
+    requires spring.boot.autoconfigure;
+    requires spring.boot;
+    requires spring.core;
+    requires java.persistence;
+    requires spring.data.commons;
+    requires spring.context;
+    requires spring.beans;
+    requires java.sql;
+    requires spring.data.jpa;
+    requires org.hibernate.orm.core;
+    requires spring.tx;
+    requires org.json;
 }

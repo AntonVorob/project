@@ -1,11 +1,10 @@
 package com.example.project.movies;
 
-import com.example.project.ChatDialog;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
+@Service
 public class MovieService {
 
     public ArrayList<ChatDialog> getMovies() {
