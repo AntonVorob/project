@@ -1,5 +1,6 @@
-package com.example.project.movies;
+package com.example.project.gui;
 
+import com.example.project.movies.Movie;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -23,7 +24,7 @@ public class MovieCard extends HBox {
 
     // TODO:
     public void setMovie(Movie m) {
-
+        this.nameTitle.setText(m.getNameRU());
     }
     public void setMovieName(String s) {
         this.nameTitle.setText(s);

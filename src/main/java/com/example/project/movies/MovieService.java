@@ -2,6 +2,7 @@ package com.example.project.movies;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.net.HttpURLConnection;
@@ -11,13 +12,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-@Service
+@Component
 public class MovieService {
 
     public ArrayList<Movie> getMovies() {
-    // TODO:
-
-
+        // TODO:
+        return new ArrayList<>();
     }
 
 

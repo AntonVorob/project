@@ -36,6 +36,10 @@ public class Movie {
         this.webUrl = webUrl;
     }
 
+    public Movie(String nameRu) {
+        this.nameRU = nameRu;
+    }
+
     public Movie() {
 
     }

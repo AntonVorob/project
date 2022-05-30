@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16">
+    <!--<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"> -->
+    <children>
+        <ImageView fx:id="avatarThumbnail" fitHeight="96.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true"/>
+        <VBox prefHeight="95.0" prefWidth="246.0" style="-fx-background-color: #A5A5A5;">
+            <children>
+                <Label fx:id="nameTitle" text="Movie Name" textFill="#2f0d0d">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0"/>
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="messageText" text="Label">
+                    <VBox.margin>
+                        <Insets left="15.0" top="10.0"/>
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </children>
+    <!--</HBox>-->
+
+</fx:root>
