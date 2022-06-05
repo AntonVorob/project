@@ -78,7 +78,8 @@ public class MovieCardViewer extends HBox implements Initializable {
     MovieCard card;
 
     void movieClicked(MouseEvent e, Movie m) {
-        // TODO: setMovie & передать карточке кино для отображения
+
+
         this.card.setMovie(m);
     }
 }

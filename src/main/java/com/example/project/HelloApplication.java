@@ -30,7 +30,7 @@ public class HelloApplication extends Application {
 
         // TODO: project.fxml
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("example.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 545);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         MovieCardViewer x = new MovieCardViewer();

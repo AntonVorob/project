@@ -15,14 +15,36 @@ import java.util.Scanner;
 @Component
 public class MovieService {
 
-    public ArrayList<Movie> getMovies() {
+    public ArrayList<Movie> getMoviesPlanned() {
         // TODO:
         return new ArrayList<>();
     }
 
+    public ArrayList<Movie> getMoviesWatched() {
 
-    public String[] findMovies(String s) {
+        return new ArrayList<>();
+    }
 
+    public ArrayList<Movie> getMoviesFavourites() {
+
+        return new ArrayList<>();
+    }
+
+    public ArrayList<Movie> getMoviesPostponed() {
+
+        return new ArrayList<>();
+    }
+
+    public ArrayList<Movie> getMoviesAbandoned() {
+
+        return new ArrayList<>();
+    }
+
+
+
+
+    public ArrayList<Movie> findMovies(String s) {
+    ArrayList<Movie> Movies = new ArrayList<Movie>();
         try {
 
             URL url = new URL("https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?" +
@@ -30,7 +52,7 @@ public class MovieService {
                     "&page=1");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestProperty("Accept", "application/json");
-            conn.setRequestProperty("X-API-KEY", "79309bde-6cab-48d6-a717-e633cf5fbc89");
+            conn.setRequestProperty("X-API-KEY", "");
 
             int responsecode = conn.getResponseCode();
 
@@ -49,7 +71,18 @@ public class MovieService {
                 // Здесь в бой вступаем МЫ!
                 JSONArray movies = (JSONArray) response.get("films");
                 for (int i = 0; i < movies.length(); i++) {
-                    System.out.println(movies.getJSONObject(i).getString("nameRu"));
+                    Movie movie = new Movie();
+                    movie.nameRU=movies.getJSONObject(i).getString("nameRu");
+                    movie.filmId=movies.getJSONObject(i).getInt( "filmId");
+                    movie.years=movies.getJSONObject(i).getInt("year");
+                    movie.shortDescription=movies.getJSONObject(i).getString("description");
+                    movie.Genres=movies.getJSONObject(i).getString("genre");
+                    movie.nameEN=movies.getJSONObject(i).getString("nameEn");
+                    movie.PosterURL=movies.getJSONObject(i).getString("posterUrl");
+
+                    Movies.add(movie);
+
+                   // System.out.println(movies.getJSONObject(i).getString("nameRu"));
                 }
 
             }
@@ -60,7 +93,7 @@ public class MovieService {
             e.printStackTrace();
         }
 
-        return new String[]{};
+        return Movies;
 
     }
 

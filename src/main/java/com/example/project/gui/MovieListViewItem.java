@@ -4,14 +4,17 @@ import com.example.project.movies.Movie;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 public class MovieListViewItem extends HBox {
 
     // подтянуть названия графических элементов
     @FXML
-    Label nameTitle;
-
+    public Label nameTitle;
+    public ImageView avatarThumbnail;
+    public Label Description;
     MovieListViewItem() {
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("MovieListViewItem.fxml"));
         fxmlLoader.setRoot(this);
@@ -24,8 +27,13 @@ public class MovieListViewItem extends HBox {
     }
 
     void setMovie(Movie m) {
-        // TODO: сетТекст, заполнить графические элементы данными из объекта Фильма
         this.nameTitle.setText(m.getNameRU());
+        this.Description.setText (m.getShortDescription());
+        try{
+            this.avatarThumbnail.setImage(new Image(m.getPosterURL()));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }
